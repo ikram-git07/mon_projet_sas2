@@ -124,3 +124,12 @@ console.log("c bon le candidat est ajouter ");
 }
 menuPrincipal ()
 
+function AjouterPlusieursCandidatsàLaFois (){
+    const nbrCand = Number(prompt("entrez le nombre des candidates selon votre besoin: "));
+    for (let i=0; i< nbrCand; i++){
+        AjouterUnNouveauCandidat()
+
+    }
+}
+menuPrincipal ()
+
