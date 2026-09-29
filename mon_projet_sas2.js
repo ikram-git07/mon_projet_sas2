@@ -186,3 +186,38 @@ function AfficherLaListeDesCandidats (){
             }
      menuPrincipal ();
 }
+
+function VoterPourUnCandidat (){
+     let cin =prompt("entrez ta propre num CIN: ");
+     let dejaVote = false;
+     for (let i=0; i< candidat1.length; i++){
+        for (let j=0; j< candidat1[i].electeurs.length; j++){
+            if (candidat1[i].electeurs[j] === cin){
+                dejaVote = true;
+                break;
+            }
+        }
+           
+     }
+    if(dejaVote){
+    console.log("Vous avez déjà voté et tu na pas le droit de modifier votre vote ni de voter à nouveau");
+    menuPrincipal();
+    return;
+
+}
+let choix = prompt("entrez le num de cin de candidat par votre choix: ")
+let trouve =false;
+     for(let i=0; i< candidat1.length; i++){
+            if (candidat1[i].cin === choix ){
+        candidat1[i].electeurs.push(cin);
+        trouve=true;
+        console.log("vote save avec succes ");
+        menuPrincipal();
+        break
+    }
+}
+if(!trouve) {
+console.log("candidat introuvable" );
+}
+}
+
