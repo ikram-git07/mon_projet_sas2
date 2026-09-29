@@ -314,3 +314,47 @@ function  RechercherDesCandidats (){
         menuPrincipal()
 }
 
+function StacantistiquesDeSelection(){
+    // Afficher le nombre total de candidats.
+let conteur =0;
+let total =0;
+for (let i=0; i< candidat1.length; i++){
+    conteur ++
+   } 
+    // Afficher le nombre total de votes exprimés dans toute l'élection
+for (let i=0; i< candidat1.length; i++){
+    total = total + candidat1[i].electeurs.length ;
+}
+// console.log("le nombre total de votes exprimés dans toute l'élection : " + total);
+console.log("le nombre total de candidats est : " + conteur);
+console.log("le nombre total de votes exprimés dans toute l'élection : " + total);
+
+// Afficher le Top 3 des candidats ayant le plus de votes.
+function vot(){
+    for(let i=0; i< candidat1.length -1 -i; i++ ){
+                for(let j =0; j< candidat1.length -1 -i; j++){
+                    if(candidat1[j].electeurs.length < candidat1[j + 1].electeurs.length){
+                        let taux = candidat1[j];
+                        candidat1[j] = candidat1[j + 1];
+                       candidat1[j + 1] = taux;
+                    }
+                }
+            }   
+}
+vot ();
+console.log("les Top 3 des candidats sont : ")
+    for (let i=0 ; i< 3 && i<candidat1.length; i++){
+console.log(candidat1[i].nom + " " + candidat1[i].electeurs.length);
+    }
+let  partie = {};
+for (let i=0; i< candidat1.length; i++){
+    let partiPolitique = candidat1[i].partiPolitique;
+    if(partie[partiPolitique] === undefined ){
+        partie[partiPolitique] = 1
+    } else {
+        partie[partiPolitique]++;
+    }
+   } 
+   console.log("le nombre de candidats par parti politique est : " , partie )
+menuPrincipal()
+}
