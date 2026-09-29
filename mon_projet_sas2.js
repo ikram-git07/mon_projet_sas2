@@ -133,3 +133,56 @@ function AjouterPlusieursCandidatsàLaFois (){
 }
 menuPrincipal ()
 
+function AfficherLaListeDesCandidats (){
+        console.log("=================================")
+        console.log("       mini menu            ")
+        console.log("1. sorte le nombre de votes ")
+        console.log("2. filtrer par parti politique")
+        console.log("=================================")
+        let choix = Number(prompt("entrez votre choix: "))
+        console.log("")
+        if(choix=== 1){
+
+            for(let i=0; i< candidat1.length -1 -i; i++ ){
+                for(let j =0; j< candidat1.length -1 -i; j++){
+                    if(candidat1[j].electeurs.length < candidat1[j + 1].electeurs.length){
+                        let taux = candidat1[j];
+                        candidat1[j] = candidat1[j + 1];
+                       candidat1[j + 1] = taux;
+                    }
+                }
+            }   
+            
+            for(let i=0; i< candidat1.length; i++){
+                console.log("cin" + " : " + candidat1[i].cin);
+                console.log("nom" + " : " +  candidat1[i].nom );
+                console.log("prenom" + " : " +  candidat1[i].prenom );
+                console.log("partiPolitique" + " : " +  candidat1[i].partiPolitique );
+                console.log("age" + " : " + candidat1[i].age);
+                console.log("electeurs" + " : " + candidat1[i].electeurs.length);
+                console.log('====================')
+            }
+        } 
+             else if (choix === 2 ){
+                let trouve=false;
+                let partiPolitique =prompt("entrez le partie politique: ");
+                for(let i=0; i< candidat1.length; i++){
+                    if(candidat1[i].partiPolitique === partiPolitique){
+                        console.log("cin" + " : " + candidat1[i].cin);
+                        console.log("nom" + " : " +  candidat1[i].nom );
+                        console.log("prenom" + " : " +  candidat1[i].prenom );
+                        console.log("partiPolitique" + " : " +  candidat1[i].partiPolitique );
+                        console.log("age" + " : " + candidat1[i].age);
+                        console.log("electeurs" + " : " + candidat1[i].electeurs.length);
+                        console.log('=================================================');
+                                        trouve=true
+                    }
+                }
+                if(trouve===false){
+                        console.log("la candidat est introvablle");
+                       
+                    }
+
+            }
+     menuPrincipal ();
+}
