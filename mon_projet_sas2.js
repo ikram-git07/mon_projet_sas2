@@ -268,3 +268,25 @@ if(choix === 1){
 } 
 menuPrincipal()
 }
+
+
+function SupprimerUnCandidat(){
+     let CIN =prompt("entrez le cin de candidat1 qui tu veux le suppreimer: ");
+     let index ;
+     let exist = false;
+       for (let i=0; i< candidat1.length; i++){
+            if (candidat1[i].cin === CIN){
+                exist = true;
+                index = i;
+                candidat1.splice(index, 1);
+                console.log("le candidat de la liste a ete Supprimer ")
+            }
+        }
+        if(!exist){
+            console.log("le cin de candidat est introvablle");
+            menuPrincipal()
+            return;
+        }
+
+menuPrincipal()
+}
