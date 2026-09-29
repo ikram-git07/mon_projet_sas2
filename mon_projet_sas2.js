@@ -92,3 +92,35 @@ function menuPrincipal (){
 }
 menuPrincipal();
 
+
+function AjouterUnNouveauCandidat (){
+  const CIN = prompt("entrez le num de votre cin: ");
+
+  for (let i=0; i< candidat1.length; i++){
+    if (candidat1[i].cin === CIN){
+        console.log("ce num de cin est deja existe ");
+        return;
+     }
+  }
+
+let nom = prompt("entrez votre nom: ");
+let prenom = prompt("entrez votre prenom: ");
+let partiPolitique = prompt("entrez votre partie politique: ");
+let age = Number(prompt("entrez ton age: "));
+
+let candidat ={
+    cin : CIN,
+    nom : nom,
+    prenom : prenom,
+    partiPolitique : partiPolitique,
+    age : age,
+    electeurs:[]
+
+
+};
+candidat1.push(candidat);
+console.log("c bon le candidat est ajouter ");
+
+}
+menuPrincipal ()
+
