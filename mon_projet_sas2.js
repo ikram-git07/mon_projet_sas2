@@ -290,3 +290,27 @@ function SupprimerUnCandidat(){
 
 menuPrincipal()
 }
+
+function  RechercherDesCandidats (){
+    let NOM =prompt("entrez le nom de candidat1 que tu veux le checher: ");
+     let exist = false;
+       for (let i=0; i< candidat1.length; i++){
+            if (candidat1[i].nom === NOM){
+                console.log("cin" + " : " + candidat1[i].cin)
+                console.log("nom" + " : " +  candidat1[i].nom )
+                console.log("prenom" + " : " +  candidat1[i].prenom )
+                console.log("partiPolitique" + " : " +  candidat1[i].partiPolitique )
+                console.log("age" + " : " + candidat1[i].age)
+                console.log("electeurs" + " : " + candidat1[i].electeurs.length)
+                
+                          exist = true;
+            }
+        }
+        if(!exist){
+            console.log("le nom est introvablle");
+            menuPrincipal()
+            return;
+        }
+        menuPrincipal()
+}
+
