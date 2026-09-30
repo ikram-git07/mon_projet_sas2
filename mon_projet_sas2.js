@@ -81,7 +81,7 @@ function menuPrincipal (){
                 break;
             case 8:
                 
-               StacantistiquesDeSelection();
+              StatistiquesDeSelection();
                 break;
             case 0:
                 break
@@ -115,12 +115,9 @@ let candidat ={
     partiPolitique : partiPolitique,
     age : age,
     electeurs:[]
-
-
 };
 candidat1.push(candidat);
 console.log("c bon le candidat est ajouter ");
-
 }
 menuPrincipal ()
 
@@ -128,7 +125,6 @@ function AjouterPlusieursCandidatsàLaFois (){
     const nbrCand = Number(prompt("entrez le nombre des candidates selon votre besoin: "));
     for (let i=0; i< nbrCand; i++){
         AjouterUnNouveauCandidat()
-
     }
 }
 menuPrincipal ()
@@ -140,17 +136,15 @@ function AfficherLaListeDesCandidats (){
         console.log("2. filtrer par parti politique")
         console.log("=================================")
         let choix = Number(prompt("entrez votre choix: "))
-        console.log("")
         if(choix=== 1){
-
-            for(let i=0; i< candidat1.length -1 -i; i++ ){
+            for(let i=0; i< candidat1.length; i++ ){
                 for(let j =0; j< candidat1.length -1 -i; j++){
                     if(candidat1[j].electeurs.length < candidat1[j + 1].electeurs.length){
                         let taux = candidat1[j];
                         candidat1[j] = candidat1[j + 1];
                        candidat1[j + 1] = taux;
                     }
-                }
+               }
             }   
             
             for(let i=0; i< candidat1.length; i++){
@@ -182,7 +176,6 @@ function AfficherLaListeDesCandidats (){
                         console.log("la candidat est introvablle");
                        
                     }
-
             }
      menuPrincipal ();
 }
@@ -194,12 +187,12 @@ function VoterPourUnCandidat (){
         for (let j=0; j< candidat1[i].electeurs.length; j++){
             if (candidat1[i].electeurs[j] === cin){
                 dejaVote = true;
-                break;
+                break; 
             }
         }
            
      }
-    if(dejaVote){
+    if(dejaVote === true){
     console.log("Vous avez déjà voté et tu na pas le droit de modifier votre vote ni de voter à nouveau");
     menuPrincipal();
     return;
@@ -219,9 +212,8 @@ let trouve =false;
 if(!trouve) {
 console.log("candidat introuvable" );
 }
+menuPrincipal()
 }
-
-
 function ModifierLesInformationsPourCandidat(){
     let CIN =prompt("entrez le cin de candidat1 que tu veux le modifier: ");
     let exist = false;
@@ -268,17 +260,13 @@ if(choix === 1){
 } 
 menuPrincipal()
 }
-
-
 function SupprimerUnCandidat(){
      let CIN =prompt("entrez le cin de candidat1 qui tu veux le suppreimer: ");
-     let index ;
      let exist = false;
        for (let i=0; i< candidat1.length; i++){
             if (candidat1[i].cin === CIN){
                 exist = true;
-                index = i;
-                candidat1.splice(index, 1);
+                candidat1.splice(i, 1);
                 console.log("le candidat de la liste a ete Supprimer ")
             }
         }
@@ -314,7 +302,7 @@ function  RechercherDesCandidats (){
         menuPrincipal()
 }
 
-function StacantistiquesDeSelection(){
+function StatistiquesDeSelection(){
     // Afficher le nombre total de candidats.
 let conteur =0;
 let total =0;
@@ -332,7 +320,7 @@ console.log("le nombre total de votes exprimés dans toute l'élection : " + tot
 // Afficher le Top 3 des candidats ayant le plus de votes.
 function vot(){
     for(let i=0; i< candidat1.length -1 -i; i++ ){
-                for(let j =0; j< candidat1.length -1 -i; j++){
+                for(let j =0; j< candidat1.length -i -1 ; j++){
                     if(candidat1[j].electeurs.length < candidat1[j + 1].electeurs.length){
                         let taux = candidat1[j];
                         candidat1[j] = candidat1[j + 1];
@@ -358,3 +346,69 @@ for (let i=0; i< candidat1.length; i++){
    console.log("le nombre de candidats par parti politique est : " , partie )
 menuPrincipal()
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let array = [1, 2, 3, 4, 5]
+// function supp (){
+//     let index= 2;
+//     for(let i=0; i<array.length; i++){
+//         if(array[i].length <= index){
+//             console.log
+
+//         }
+//     }
+// }
+
+
+
+
+
+ let array = [1, 2, 3, 4, 5]
+ for (let i=0; i>array.length-1; i--){
+    if(array[i].length-1 < )
+ }
+
+
+
+
+
+
+
